@@ -35,7 +35,7 @@ def on_message(client, userdata, msg):
     # example command topic: /x10/A1/set
     # example brightness topic /x10/A1/setb
     # brightness is not yet working
-    light_re = re.search(r'/([A-Z][1-16])/', str(msg.topic))
+    light_re = re.search(r'/([A-Z][0-9][0-9]?)/', str(msg.topic))
 
     if light_re is None:
         print("no light")
