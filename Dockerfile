@@ -22,6 +22,7 @@ RUN cp -r /etc/heyu /etc/heyu.default \
 
 
 COPY heyu-run.sh /usr/local/bin/heyu-run
-COPY mqtt-client.py /mqtt-client.py 
+COPY mqtt-client.py /usr/local/bin/mqtt-client
 COPY x10.conf /etc/heyu/x10.conf
+ENV PYTHONUNBUFFERED=1
 CMD heyu-run

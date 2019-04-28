@@ -6,6 +6,6 @@ if [ ! -f /etc/heyu/x10.conf ]; then
   echo "Please use them to create x10.conf and x10.sched and re-run." 1>&2
   exit;
 fi
-heyu engine 1>&2
-python3 /mqtt-client.py &
-heyu monitor
+heyu engine
+heyu monitor & mqtt-client
+

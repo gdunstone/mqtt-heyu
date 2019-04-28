@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python3
 import paho.mqtt.client as mqtt
 import os, re, subprocess
 
@@ -56,12 +56,8 @@ def on_message(client, userdata, msg):
         print("done")
 
 
-if __name__ == "__main__":
-
-    client = mqtt.Client()
-    client.on_connect = on_connect
-    client.on_message = on_message
-
-    client.connect(os.environ.get("MQTT_BROKER"), 1883, 60)
-
-    client.loop_forever()
+client = mqtt.Client()
+client.on_connect = on_connect
+client.on_message = on_message
+client.connect(os.environ.get("MQTT_BROKER"), 1883, 60)
+client.loop_forever()
